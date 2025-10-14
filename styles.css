@@ -1,0 +1,338 @@
+/* Estilos globales - MODO OSCURO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #e0e0e0;
+    line-height: 1.6;
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+header h1 {
+    color: #FF6B35;
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+    text-shadow: 0 0 20px rgba(255, 107, 53, 0.3);
+}
+
+header p {
+    color: #8892b0;
+    font-size: 1.1rem;
+}
+
+/* Sección agregar items */
+.agregar-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+#nuevoItem {
+    flex: 1;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 2px solid #233554;
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+#nuevoItem::placeholder {
+    color: #8892b0;
+}
+
+#nuevoItem:focus {
+    outline: none;
+    border-color: #64ffda;
+    box-shadow: 0 0 15px rgba(100, 255, 218, 0.2);
+}
+
+#btnAgregar {
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #64ffda 0%, #00b894 100%);
+    color: #1a1a2e;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+#btnAgregar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(100, 255, 218, 0.4);
+}
+
+/* Lista de items */
+.lista-items {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.lista-items h2 {
+    color: #64ffda;
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+}
+
+#listaContainer {
+    list-style: none;
+}
+
+.item {
+    padding: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: background 0.3s ease;
+}
+
+.item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+}
+
+.item:last-child {
+    border-bottom: none;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    color: #8892b0;
+    font-size: 0.9rem;
+}
+
+/* Responsive - Móviles */
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+    
+    .agregar-item {
+        flex-direction: column;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    #btnAgregar {
+        padding: 12px;
+    }
+}
+
+/* ESTILOS MEJORADOS - Agrega esto al final de tu CSS */
+
+/* Controles de items */
+.controles-item {
+    display: flex;
+    gap: 8px;
+    margin-left: auto;
+}
+
+.btn-completar, .btn-eliminar {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    padding: 5px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.btn-completar:hover {
+    background: rgba(100, 255, 218, 0.2);
+    transform: scale(1.1);
+}
+
+.btn-eliminar:hover {
+    background: rgba(255, 107, 53, 0.2);
+    transform: scale(1.1);
+}
+
+/* Texto tachado cuando se completa */
+.completado {
+    text-decoration: line-through;
+    opacity: 0.6;
+    color: #64ffda;
+}
+
+/* Mejorar los items */
+.item {
+    padding: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+.item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateX(5px);
+}
+
+/* Animación cuando se agrega un item */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.item {
+    animation: aparecer 0.3s ease;
+}
+
+/* Contador en el título */
+.lista-items h2 {
+    color: #64ffda;
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.lista-items h2::after {
+    content: "📝";
+    font-size: 1rem;
+    opacity: 0.7;
+	transition: transform 0.3s ease;
+}
+
+.lista-items h2:hover::after {
+    transform: rotate(15deg) scale(1.1);
+}
+
+/* Agrega esto al CSS - Input de costo en los items */
+.input-costo-item {
+    width: 80px;
+    padding: 5px 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid #233554;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    color: #64ffda;
+    text-align: center;
+    margin-left: 10px;
+}
+
+.input-costo-item::placeholder {
+    color: #8892b0;
+}
+
+.input-costo-item:focus {
+    outline: none;
+    border-color: #64ffda;
+    box-shadow: 0 0 8px rgba(100, 255, 218, 0.3);
+}
+
+.costo-display {
+    color: #64ffda;
+    font-weight: bold;
+    background: rgba(100, 255, 218, 0.1);
+    padding: 2px 8px;
+    border-radius: 12px;
+    margin-left: 8px;
+    font-size: 0.9rem;
+}
+
+.btn-agregar-costo {
+    background: rgba(255, 107, 53, 0.2);
+    border: 1px solid #FF6B35;
+    color: #FF6B35;
+    padding: 4px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    margin-left: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-agregar-costo:hover {
+    background: rgba(255, 107, 53, 0.3);
+    transform: scale(1.05);
+}
+
+/* FIX para alinear todos los botones */
+.controles-item {
+    display: flex;
+    gap: 8px;
+    margin-left: auto;
+    align-items: center; /* ¡ESTA LÍNEA ES CLAVE! */
+}
+
+/* Botón de costo - VERSIÓN ALINEADA */
+.btn-agregar-costo {
+    background: rgba(255, 215, 0, 0.2);
+    border: 1px solid #FFD700;
+    color: #FFD700;
+    padding: 4px 6px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.7rem;
+    margin-left: 5px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    height: 28px; /* Misma altura que los otros botones */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-agregar-costo:hover {
+    background: rgba(255, 215, 0, 0.3);
+    transform: scale(1.05);
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+}
+
+/* Asegurar que todos los botones tengan misma altura */
+.btn-completar, .btn-eliminar {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    padding: 6px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

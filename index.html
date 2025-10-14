@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listappdo - Tus listas inteligentes</title>
+    <link rel="stylesheet" href="styles.css?v=3.0">
+</head>
+<body>
+    <!-- HEADER DENTRO del body -->
+    <header>
+        <h1>📱 Listappdo ✅</h1>
+        <p>Tu asistente para compras inteligentes</p>
+    </header>
+
+    <main>
+        <section class="agregar-item">
+    <input type="text" id="nuevoItem" placeholder="Ej: Leche, pan, huevos..." aria-label="Agregar nuevo item">
+    <button id="btnAgregar">➕ Agregar</button>
+</section>
+        
+        <section class="lista-items">
+            <h2>Mi Lista de Compras</h2>
+            <ul id="listaContainer">
+                <!-- Aquí JavaScript agregará los items dinámicamente -->
+                <li class="item">🎯 Tu lista aparecerá aquí</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Agregamos un footer básico -->
+    <footer>
+        <p>Hecho con 💚 por un bebé programador</p>
+    </footer>
+
+    <!-- Próximo paso: JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
