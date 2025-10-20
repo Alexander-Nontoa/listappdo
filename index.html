@@ -15,6 +15,39 @@
 
     <main>
         <section class="agregar-item">
+		
+<!-- Sección Login/Registro -->
+<section class="auth-section" id="authSection" style="display: none;">
+    <div class="auth-container">
+        <h2>👋 Únete a Listappdo</h2>
+        
+        <!-- Formulario Login -->
+        <form class="auth-form" id="loginForm">
+            <h3>¡Bienvenido de vuelta!</h3>
+            <input type="email" id="loginEmail" placeholder="📧 Tu email" required>
+            <input type="password" id="loginPassword" placeholder="🔒 Tu contraseña" required>
+            <button type="submit" class="btn-auth">🚀 Iniciar Sesión</button>
+        </form>
+
+        <!-- Formulario Registro -->
+        <form class="auth-form" id="registerForm">
+            <h3>¿Nuevo por aquí?</h3>
+            <input type="text" id="registerName" placeholder="👤 Tu nombre" required>
+            <input type="email" id="registerEmail" placeholder="📧 Tu email" required>
+            <input type="password" id="registerPassword" placeholder="🔒 Crea una contraseña" required>
+            <button type="submit" class="btn-auth">🎉 Crear Cuenta</button>
+        </form>
+
+        <div class="auth-switch">
+            <button id="switchToRegister">¿No tienes cuenta? Regístrate</button>
+            <button id="switchToLogin">¿Olvidaste tu contraseña? Recuperémosla</button>
+        </div>
+    </div>
+</section>
+
+<!-- Botón para mostrar login -->
+<button class="btn-login-toggle" id="btnShowAuth">👤 Mi Cuenta</button>
+		
     <input type="text" id="nuevoItem" placeholder="Ej: Leche, pan, huevos..." aria-label="Agregar nuevo item">
     <button id="btnAgregar">➕ Agregar</button>
 </section>
@@ -35,5 +68,34 @@
 
     <!-- Próximo paso: JavaScript -->
     <script src="script.js"></script>
+
+    <!-- ========================================= -->
+    <!-- FIREBASE INTEGRADO (NO MODIFICAR NADA MÁS) -->
+    <!-- ========================================= -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+
+    <script>
+        // Tu configuración de Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyC9wFpQgo7RRICt-BNNQX_-4GQTrJSh9Hs",
+            authDomain: "listappdo-colab.firebaseapp.com",
+            projectId: "listappdo-colab",
+            storageBucket: "listappdo-colab.firebasestorage.app",
+            messagingSenderId: "189569356599",
+            appId: "1:189569356599:web:208e29132a865b46f880b2"
+        };
+
+        // Inicializar Firebase
+        firebase.initializeApp(firebaseConfig);
+        
+        // Inicializar servicios (globales)
+        const db = firebase.firestore();
+        const auth = firebase.auth();
+        
+        console.log("¡Firebase conectado! 🎉");
+    </script>
+    <!-- ========================================= -->
 </body>
 </html>
