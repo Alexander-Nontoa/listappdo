@@ -13,44 +13,76 @@
         <p>Tu asistente para compras inteligentes</p>
     </header>
 
+    <!-- ========================================= -->
+    <!-- NUEVO: SELECTOR DE LISTAS COLABORATIVAS -->
+    <!-- ========================================= -->
+    <section class="selector-listas">
+        <div class="lista-activa">
+            <h3 id="nombreListaActiva">Lista Principal</h3>
+            <button id="btnGestionListas">📋 Gestionar Listas</button>
+        </div>
+    </section>
+
+    <!-- ========================================= -->
+    <!-- NUEVO: MODAL GESTIÓN DE LISTAS -->
+    <!-- ========================================= -->
+    <div class="modal-listas" id="modalListas">
+        <div class="modal-contenido">
+            <h3>📚 Mis Listas</h3>
+            
+            <!-- Lista de listas existentes -->
+            <div class="lista-listas" id="listaDeListas">
+                <!-- Aquí se cargarán las listas dinámicamente -->
+            </div>
+            
+            <!-- Crear nueva lista -->
+            <div class="crear-lista">
+                <input type="text" id="inputNuevaLista" placeholder="Nombre de la nueva lista">
+                <button id="btnCrearLista">➕ Crear Lista</button>
+            </div>
+            
+            <button class="btn-cerrar-modal" id="btnCerrarModal">Cerrar</button>
+        </div>
+    </div>
+
     <main>
         <section class="agregar-item">
 		
-<!-- Sección Login/Registro -->
-<section class="auth-section" id="authSection" style="display: none;">
-    <div class="auth-container">
-        <h2>👋 Únete a Listappdo</h2>
-        
-        <!-- Formulario Login -->
-        <form class="auth-form" id="loginForm">
-            <h3>¡Bienvenido de vuelta!</h3>
-            <input type="email" id="loginEmail" placeholder="📧 Tu email" required>
-            <input type="password" id="loginPassword" placeholder="🔒 Tu contraseña" required>
-            <button type="submit" class="btn-auth">🚀 Iniciar Sesión</button>
-        </form>
+            <!-- Sección Login/Registro -->
+            <section class="auth-section" id="authSection" style="display: none;">
+                <div class="auth-container">
+                    <h2>👋 Únete a Listappdo</h2>
+                    
+                    <!-- Formulario Login -->
+                    <form class="auth-form" id="loginForm">
+                        <h3>¡Bienvenido de vuelta!</h3>
+                        <input type="email" id="loginEmail" placeholder="📧 Tu email" required>
+                        <input type="password" id="loginPassword" placeholder="🔒 Tu contraseña" required>
+                        <button type="submit" class="btn-auth">🚀 Iniciar Sesión</button>
+                    </form>
 
-        <!-- Formulario Registro -->
-        <form class="auth-form" id="registerForm">
-            <h3>¿Nuevo por aquí?</h3>
-            <input type="text" id="registerName" placeholder="👤 Tu nombre" required>
-            <input type="email" id="registerEmail" placeholder="📧 Tu email" required>
-            <input type="password" id="registerPassword" placeholder="🔒 Crea una contraseña" required>
-            <button type="submit" class="btn-auth">🎉 Crear Cuenta</button>
-        </form>
+                    <!-- Formulario Registro -->
+                    <form class="auth-form" id="registerForm">
+                        <h3>¿Nuevo por aquí?</h3>
+                        <input type="text" id="registerName" placeholder="👤 Tu nombre" required>
+                        <input type="email" id="registerEmail" placeholder="📧 Tu email" required>
+                        <input type="password" id="registerPassword" placeholder="🔒 Crea una contraseña" required>
+                        <button type="submit" class="btn-auth">🎉 Crear Cuenta</button>
+                    </form>
 
-        <div class="auth-switch">
-            <button id="switchToRegister">¿No tienes cuenta? Regístrate</button>
-            <button id="switchToLogin">¿Olvidaste tu contraseña? Recuperémosla</button>
-        </div>
-    </div>
-</section>
+                    <div class="auth-switch">
+                        <button id="switchToRegister">¿No tienes cuenta? Regístrate</button>
+                        <button id="switchToLogin">¿Olvidaste tu contraseña? Recuperémosla</button>
+                    </div>
+                </div>
+            </section>
 
-<!-- Botón para mostrar login -->
-<button class="btn-login-toggle" id="btnShowAuth">👤 Mi Cuenta</button>
+            <!-- Botón para mostrar login -->
+            <button class="btn-login-toggle" id="btnShowAuth">👤 Mi Cuenta</button>
 		
-    <input type="text" id="nuevoItem" placeholder="Ej: Leche, pan, huevos..." aria-label="Agregar nuevo item">
-    <button id="btnAgregar">➕ Agregar</button>
-</section>
+            <input type="text" id="nuevoItem" placeholder="Ej: Leche, pan, huevos..." aria-label="Agregar nuevo item">
+            <button id="btnAgregar">➕ Agregar</button>
+        </section>
         
         <section class="lista-items">
             <h2>Mi Lista de Compras</h2>

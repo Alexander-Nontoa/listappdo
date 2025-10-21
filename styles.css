@@ -40,6 +40,162 @@ header p {
     font-size: 1.1rem;
 }
 
+/* ========================================= */
+/* NUEVO: SELECTOR DE LISTAS COLABORATIVAS */
+/* ========================================= */
+.selector-listas {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.lista-activa {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#nombreListaActiva {
+    color: #64ffda;
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+#btnGestionListas {
+    background: rgba(255, 107, 53, 0.2);
+    border: 1px solid #FF6B35;
+    color: #FF6B35;
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+#btnGestionListas:hover {
+    background: rgba(255, 107, 53, 0.3);
+    transform: scale(1.05);
+}
+
+/* ========================================= */
+/* NUEVO: MODAL GESTIÓN DE LISTAS */
+/* ========================================= */
+.modal-listas {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(26, 26, 46, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-contenido {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 25px;
+    width: 90%;
+    max-width: 500px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.modal-contenido h3 {
+    color: #64ffda;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+}
+
+.lista-listas {
+    margin-bottom: 20px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.item-lista {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 12px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.item-lista:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateX(5px);
+}
+
+.item-lista.activa {
+    border-left: 4px solid #64ffda;
+    background: rgba(100, 255, 218, 0.1);
+}
+
+.crear-lista {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+#inputNuevaLista {
+    flex: 1;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 2px solid #233554;
+    border-radius: 8px;
+    color: #e0e0e0;
+    font-size: 1rem;
+}
+
+#inputNuevaLista:focus {
+    outline: none;
+    border-color: #64ffda;
+    box-shadow: 0 0 10px rgba(100, 255, 218, 0.2);
+}
+
+#btnCrearLista {
+    background: linear-gradient(135deg, #64ffda 0%, #00b894 100%);
+    border: none;
+    color: #1a1a2e;
+    padding: 12px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+#btnCrearLista:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(100, 255, 218, 0.4);
+}
+
+.btn-cerrar-modal {
+    width: 100%;
+    padding: 12px;
+    background: rgba(255, 107, 53, 0.2);
+    border: 1px solid #FF6B35;
+    color: #FF6B35;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+.btn-cerrar-modal:hover {
+    background: rgba(255, 107, 53, 0.3);
+}
+
 /* Sección agregar items */
 .agregar-item {
     display: flex;
@@ -233,7 +389,7 @@ footer {
     content: "📝";
     font-size: 1rem;
     opacity: 0.7;
-	transition: transform 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .lista-items h2:hover::after {
@@ -469,4 +625,73 @@ footer {
 
 #loginForm {
     display: block;
+}
+
+/* ===== FIX PARA MÓVIL - BOTÓN LOGIN ===== */
+@media (max-width: 768px) {
+    .btn-login-toggle {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin: 10px auto;
+        display: block;
+        width: 90%;
+        text-align: center;
+    }
+    
+    header {
+        padding-top: 60px; /* Espacio para el botón */
+    }
+    
+    .auth-container {
+        width: 95%;
+        padding: 20px;
+        margin: 10px;
+    }
+
+    /* NUEVO: Responsive para selector de listas */
+    .lista-activa {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .modal-contenido {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .crear-lista {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn-login-toggle {
+        font-size: 0.8rem;
+        padding: 8px 12px;
+    }
+    
+    .auth-container h2 {
+        font-size: 1.3rem;
+    }
+    
+    .auth-form input {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+
+    /* NUEVO: Responsive para móviles pequeños */
+    .selector-listas {
+        padding: 10px;
+    }
+
+    #nombreListaActiva {
+        font-size: 1rem;
+    }
+
+    #btnGestionListas {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+    }
 }
