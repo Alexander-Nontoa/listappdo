@@ -98,11 +98,8 @@
         <p>Hecho con 💚 por un bebé programador</p>
     </footer>
 
-    <!-- Próximo paso: JavaScript -->
-    <script src="script.js"></script>
-
     <!-- ========================================= -->
-    <!-- FIREBASE INTEGRADO (NO MODIFICAR NADA MÁS) -->
+    <!-- FIREBASE PRIMERO (MOVIDO ARRIBA DE script.js) -->
     <!-- ========================================= -->
     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
@@ -123,11 +120,13 @@
         firebase.initializeApp(firebaseConfig);
         
         // Inicializar servicios (globales)
-        const db = firebase.firestore();
-        const auth = firebase.auth();
-        
+                
         console.log("¡Firebase conectado! 🎉");
     </script>
+
     <!-- ========================================= -->
+    <!-- TU SCRIPT.JS AHORA CARGA DESPUÉS DE FIREBASE -->
+    <!-- ========================================= -->
+    <script src="script.js"></script>
 </body>
 </html>

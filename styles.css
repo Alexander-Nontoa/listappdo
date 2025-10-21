@@ -695,3 +695,271 @@ footer {
         padding: 6px 10px;
     }
 }
+
+/* ========================================= */
+/* ESTILOS PARA LOS ITEMS Y BOTONES - AGREGAR AL FINAL */
+/* ========================================= */
+
+/* Contenedor principal del item */
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin: 10px 0;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.item:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateX(5px);
+}
+
+/* Cuando el item está completado */
+.item.completado {
+    background: rgba(100, 255, 218, 0.1);
+    opacity: 0.7;
+}
+
+.item.completado .item-texto {
+    text-decoration: line-through;
+    color: #64ffda;
+}
+
+/* Texto del item */
+.item-texto {
+    flex: 1;
+    color: #e0e0e0;
+    font-size: 1rem;
+    margin-right: 15px;
+}
+
+/* Contenedor de botones */
+.item-botones {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+/* Botones de acción */
+.btn-completar, .btn-eliminar {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    min-width: 80px;
+}
+
+.btn-completar {
+    background: rgba(100, 255, 218, 0.2);
+    color: #64ffda;
+    border: 1px solid #64ffda;
+}
+
+.btn-completar:hover {
+    background: rgba(100, 255, 218, 0.3);
+    transform: scale(1.05);
+}
+
+.btn-eliminar {
+    background: rgba(255, 107, 53, 0.2);
+    color: #FF6B35;
+    border: 1px solid #FF6B35;
+}
+
+.btn-eliminar:hover {
+    background: rgba(255, 107, 53, 0.3);
+    transform: scale(1.05);
+}
+
+/* Estado de botón cuando está completado */
+.item.completado .btn-completar {
+    background: rgba(255, 193, 7, 0.2);
+    color: #FFC107;
+    border: 1px solid #FFC107;
+}
+
+/* Animación cuando se agrega un item */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.item {
+    animation: slideIn 0.3s ease;
+}
+
+/* Responsive para móviles */
+@media (max-width: 480px) {
+    .item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .item-botones {
+        width: 100%;
+        justify-content: flex-end;
+    }
+    
+    .btn-completar, .btn-eliminar {
+        min-width: 70px;
+        font-size: 0.8rem;
+        padding: 6px 10px;
+    }
+    
+    .item-texto {
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+}
+
+/* ========================================= */
+/* ICONOS MÁS PEQUEÑOS Y FORMATEO DE PESOS */
+/* ========================================= */
+
+/* Iconos más pequeños */
+.btn-completar, .btn-eliminar, .btn-agregar-costo {
+    padding: 4px 6px !important;
+    font-size: 0.7rem !important;
+    min-width: 30px !important;
+    height: 25px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Específicamente el botón de completar más compacto */
+.btn-completar {
+    font-size: 0.6rem !important;
+    min-width: 25px !important;
+}
+
+/* Asegurar que los botones estén alineados */
+.item-botones {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+/* ========================================= */
+/* FORMATEO DE PESOS COLOMBIANOS */
+/* ========================================= */
+
+/* Función para formatear pesos (se usará en JavaScript) */
+.format-pesos {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-weight: bold;
+}
+
+.costo-display {
+    background: rgba(255, 215, 0, 0.2);
+    color: #FFD700;
+    padding: 2px 6px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    font-weight: bold;
+}
+
+/* Total con formato de pesos */
+.item.total {
+    background: rgba(100, 255, 218, 0.15);
+    border: 2px solid #64ffda;
+    font-size: 1rem;
+    justify-content: center;
+    margin-top: 15px;
+    padding: 12px;
+}
+
+.item.total strong {
+    color: #64ffda;
+    font-size: 1.1rem;
+}
+
+/* Mejorar el contenedor de botones para pantallas pequeñas */
+@media (max-width: 480px) {
+    .item-botones {
+        gap: 3px;
+    }
+    
+    .btn-completar, .btn-eliminar, .btn-agregar-costo {
+        padding: 3px 4px !important;
+        font-size: 0.65rem !important;
+        min-width: 25px !important;
+    }
+    
+    .costo-display {
+        font-size: 0.7rem;
+        padding: 1px 4px;
+    }
+}
+
+/* ========================================= */
+/* ESTILOS PARA ELIMINAR LISTAS */
+/* ========================================= */
+
+.lista-info {
+    flex: 1;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.item-lista {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-eliminar-lista {
+    background: rgba(255, 107, 53, 0.2);
+    border: 1px solid #FF6B35;
+    color: #FF6B35;
+    padding: 6px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+    min-width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-eliminar-lista:hover {
+    background: rgba(255, 107, 53, 0.3);
+    transform: scale(1.1);
+}
+
+/* Efecto al pasar sobre la lista */
+.item-lista:hover .btn-eliminar-lista {
+    opacity: 1;
+}
+
+/* Responsive para móviles */
+@media (max-width: 480px) {
+    .btn-eliminar-lista {
+        padding: 4px 6px;
+        font-size: 0.7rem;
+        min-width: 25px;
+        height: 25px;
+    }
+    
+    .item-lista {
+        gap: 5px;
+    }
+}
