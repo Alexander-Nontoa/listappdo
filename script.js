@@ -451,7 +451,7 @@ function cargarListasUsuario() {
         } else {
             btnShowAuth.textContent = '👤 Mi Cuenta';
             if (listaContainer) {
-                listaContainer.innerHTML = '<li class="item">🔐 Inicia sesión para ver tus listas</li>';
+                listaContainer.innerHTML = listaContainer.innerHTML = '<li class="item">👋 ¡Hola! Inicia sesión en "Mi Cuenta" para crear y ver tus listas</li>';
             }
         }
     });
