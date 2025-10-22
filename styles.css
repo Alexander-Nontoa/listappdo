@@ -963,3 +963,174 @@ footer {
         gap: 5px;
     }
 }
+/* ========================================= */
+/* FIX PARA MÓVIL - BOTÓN MI CUENTA */
+/* ========================================= */
+
+@media (max-width: 768px) {
+    /* Header y botón Mi Cuenta */
+    header {
+        padding-top: 50px !important; /* Espacio para el botón flotante */
+        position: relative;
+    }
+
+    .btn-login-toggle {
+        position: fixed !important;
+        top: 10px !important;
+        right: 10px !important;
+        z-index: 1001;
+        background: rgba(255, 107, 53, 0.9) !important;
+        backdrop-filter: blur(10px);
+        border: 1px solid #FF6B35;
+        padding: 8px 12px !important;
+        font-size: 0.8rem !important;
+        max-width: 120px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* Asegurar que el texto no se desborde */
+    .btn-login-toggle span {
+        display: inline-block;
+        max-width: 80px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    /* Modal de listas - Fix para móvil */
+    .modal-contenido {
+        width: 95% !important;
+        margin: 10px !important;
+        padding: 20px !important;
+        max-height: 85vh !important;
+    }
+
+    /* Selector de listas activas */
+    .lista-activa {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        padding: 10px;
+    }
+
+    #nombreListaActiva {
+        font-size: 1.1rem !important;
+        margin-bottom: 5px;
+    }
+
+    #btnGestionListas {
+        width: 100%;
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    /* Items en móvil */
+    .item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 12px !important;
+    }
+
+    .item-botones {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    /* Formularios de login mejorados */
+    .auth-container {
+        width: 95% !important;
+        margin: 10px !important;
+        padding: 20px !important;
+    }
+
+    .auth-form input {
+        font-size: 16px !important; /* Evita zoom en iOS */
+    }
+}
+
+/* ========================================= */
+/* FIX PARA MÓVILES MUY PEQUEÑOS */
+/* ========================================= */
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px !important;
+    }
+
+    .btn-login-toggle {
+        max-width: 100px;
+        font-size: 0.75rem !important;
+        padding: 6px 10px !important;
+    }
+
+    header h1 {
+        font-size: 1.8rem !important;
+    }
+
+    header p {
+        font-size: 1rem !important;
+    }
+
+    /* Modal de crear lista */
+    .crear-lista {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #inputNuevaLista {
+        width: 100% !important;
+    }
+
+    #btnCrearLista {
+        width: 100%;
+    }
+
+    /* Botones de items más compactos */
+    .item-botones {
+        gap: 5px;
+    }
+
+    .btn-completar, .btn-eliminar, .btn-agregar-costo {
+        padding: 4px 6px !important;
+        font-size: 0.7rem !important;
+        min-width: 25px !important;
+    }
+}
+
+/* ========================================= */
+/* FIX ESPECÍFICO PARA BOTÓN MI CUENTA */
+/* ========================================= */
+
+/* Asegurar que el botón siempre esté arriba */
+.btn-login-toggle {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 1000;
+    background: rgba(255, 107, 53, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid #FF6B35;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    max-width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all 0.3s ease;
+}
+
+.btn-login-toggle:hover {
+    background: rgba(255, 107, 53, 1);
+    transform: scale(1.05);
+}
+
+/* Header con espacio para el botón */
+header {
+    position: relative;
+    margin-top: 10px;
+}
